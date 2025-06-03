@@ -6,7 +6,6 @@
 Invoke-WebRequest -Uri http://qttabbar-ja.wdfiles.com/local--files/qttabbar/QTTabBar%202048%20Beta2.zip -OutFile ./qttabber.zip
 Expand-Archive -Path .\qttabber.zip -DestinationPath .\qttabber
 Start-Process -FilePath .\qttabber\QTTabBar.exe
-Remove-Item -Path .\qttabber.zip, .\qttabber -Recurse -Force
 
 
 # chocolatey
