@@ -1,5 +1,14 @@
 # 窓用インストーラ
 
+
+# qttabbar
+# http://qttabbar-ja.wikidot.com/qttabbar
+Invoke-WebRequest -Uri http://qttabbar-ja.wdfiles.com/local--files/qttabbar/QTTabBar%202048%20Beta2.zip -OutFile ./qttabber.zip
+Expand-Archive -Path .\qttabber.zip -DestinationPath .\qttabber
+Start-Process -FilePath .\qttabber\QTTabBar.exe
+Remove-Item -Path .\qttabber.zip, .\qttabber -Recurse -Force
+
+
 # chocolatey
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
@@ -79,14 +88,6 @@ foreach ($package in $choco_packages) {
 # winget install Figma.Figma
 # winget install JGraph.Draw
 # winget install Spotify.Spotify
-
-
-# qttabbar
-# http://qttabbar-ja.wikidot.com/qttabbar
-Invoke-WebRequest -Uri http://qttabbar-ja.wdfiles.com/local--files/qttabbar/QTTabBar%202048%20Beta2.zip -OutFile ./qttabber.zip
-Expand-Archive -Path .\qttabber.zip -DestinationPath .\qttabber
-Start-Process -FilePath .\qttabber\QTTabBar.exe
-Remove-Item -Path .\qttabber.zip, .\qttabber -Recurse -Force
 
 
 # WSL
