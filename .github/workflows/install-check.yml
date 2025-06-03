@@ -1,0 +1,29 @@
+#
+#    インストールできるかチェック
+#
+
+name: install-check-windows
+
+on:
+  push:
+    paths-ignore:
+      - "**.md"
+  pull_request:
+    paths-ignore:
+      - "**.md"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  install-check:
+    name: install-check
+    runs-on: windows-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: install
+        working-directory: windows
+        shell: pwsh
+        run: .\install.ps1
