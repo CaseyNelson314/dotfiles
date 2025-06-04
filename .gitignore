@@ -3,6 +3,6 @@
 
 !/.github
 !/.gitignore
-!/windows/install.sh
+!/windows/
 !/LICENSE
 !/README.md
