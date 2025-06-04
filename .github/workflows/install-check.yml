@@ -25,4 +25,4 @@ jobs:
       - name: install
         working-directory: windows
         shell: pwsh
-        run: .\install.ps1
+        run: .\appinstall.ps1
